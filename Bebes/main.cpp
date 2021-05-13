@@ -4,6 +4,8 @@
 
 int main(int argc, char *argv[])
 {
+    printf("hola mundo");
+
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
