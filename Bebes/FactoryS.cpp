@@ -35,6 +35,10 @@ Nodo* colaCorazones::verFrente(){
       return frente;
 }
 
+int colaCorazones::setCapacidad(int dato){
+
+}
+
 //FUNCIONES COLA NOTAS
 void colaNota::encolar (int dato){
     if (vacia())
@@ -69,6 +73,10 @@ bool colaNota::vacia (void){
 
 Nodo* colaNota::verFrente(){
       return frente;
+}
+
+int colaNota::setCapacidad(int dato){
+
 }
 
 //FUNCIONES COLA DIABLITO
@@ -107,6 +115,10 @@ Nodo* colaDiablito::verFrente(){
       return frente;
 }
 
+int colaDiablito::setCapacidad(int dato){
+
+}
+
 //FUNCIONES COLA SENTIMIENTOS
 void colaSentimientos::encolar (int dato){
     if (vacia())
@@ -141,4 +153,8 @@ bool colaSentimientos::vacia (void){
 
 Nodo* colaSentimientos::verFrente(){
       return frente;
+}
+
+int colaSentimientos::setCapacidad(int dato){
+
 }

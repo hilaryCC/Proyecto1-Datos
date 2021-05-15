@@ -14,6 +14,7 @@ struct Nodo {
 
 struct colaCorazones{
     Nodo * frente;
+    int capacidad;
 
     colaCorazones(){
         frente = 0;
@@ -22,10 +23,12 @@ struct colaCorazones{
     Nodo* desencolar (void);
     Nodo* verFrente(void);
     bool vacia(void);
+    int setCapacidad(int dato);
 };
 
 struct colaNota{
     Nodo * frente;
+    int capacidad;
 
     colaNota(){
         frente = 0;
@@ -34,10 +37,12 @@ struct colaNota{
     Nodo* desencolar (void);
     Nodo* verFrente(void);
     bool vacia(void);
+    int setCapacidad(int dato);
 };
 
 struct colaDiablito{
     Nodo * frente;
+    int capacidad;
 
     colaDiablito(){
         frente = 0;
@@ -46,10 +51,12 @@ struct colaDiablito{
     Nodo* desencolar (void);
     Nodo* verFrente(void);
     bool vacia(void);
+    int setCapacidad(int dato);
 };
 
 struct colaSentimientos{
     Nodo * frente;
+    int capacidad;
 
     colaSentimientos(){
         frente = 0;
@@ -58,4 +65,5 @@ struct colaSentimientos{
     Nodo* desencolar (void);
     Nodo* verFrente(void);
     bool vacia(void);
+    int setCapacidad(int dato);
 };

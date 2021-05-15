@@ -9,13 +9,23 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Almacen.cpp \
+    AlmacenMalos.cpp \
+    BebesFabricados.cpp \
+    Fabricante.cpp \
     FactoryS.cpp \
+    Horno.cpp \
     factorysthread.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    Fabricante.h \
     FactoryS.h \
+    Horno.h \
+    almacen.h \
+    almacenMalos.h \
+    bebesFabricados.h \
     factorysthread.h \
     mainwindow.h
 
