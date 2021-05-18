@@ -2,7 +2,7 @@
 #define ALMACENMALOS_H
 
 #endif // ALMACENMALOS_H
-#include "FactoryS.h"
+#include "FabricaSentimientos.h"
 
 struct colaMalos{
     Nodo * frente;

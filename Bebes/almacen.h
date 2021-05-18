@@ -1,6 +1,6 @@
 #ifndef ALMACEN_H
 #define ALMACEN_H
-#include "FactoryS.h"
+#include "FabricaSentimientos.h"
 
 #endif // ALMACEN_H
 struct colaAlmacen{

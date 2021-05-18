@@ -12,21 +12,21 @@ SOURCES += \
     Almacen.cpp \
     AlmacenMalos.cpp \
     BebesFabricados.cpp \
+    FSentiThread.cpp \
+    FabricaSentimientos.cpp \
     Fabricante.cpp \
-    FactoryS.cpp \
     Horno.cpp \
-    factorysthread.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    FSentiThread.h \
+    FabricaSentimientos.h \
     Fabricante.h \
-    FactoryS.h \
     Horno.h \
     almacen.h \
     almacenMalos.h \
     bebesFabricados.h \
-    factorysthread.h \
     mainwindow.h
 
 FORMS += \

@@ -1,4 +1,4 @@
-#include "factorysthread.h"
+#include "FSentiThread.h"
 
 FactorySThread::FactorySThread()
 {

@@ -2,7 +2,7 @@
 #define HORNO_H
 
 #endif // HORNO_H
-#include "FactoryS.cpp"
+#include "FabricaSentimientos.cpp"
 
 struct colaHorno{
     colaSentimientos * frenteCola;

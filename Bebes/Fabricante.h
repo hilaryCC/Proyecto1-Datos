@@ -1,7 +1,7 @@
 #ifndef FABRICANTE_H
 #define FABRICANTE_H
 
-#include "FactoryS.h"
+#include "FabricaSentimientos.h"
 
 #endif // FABRICANTE_H
 
