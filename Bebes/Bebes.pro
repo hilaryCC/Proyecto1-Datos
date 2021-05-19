@@ -11,22 +11,24 @@ CONFIG += c++11
 SOURCES += \
     Almacen.cpp \
     AlmacenMalos.cpp \
-    BebesFabricados.cpp \
+    Bebes.cpp \
     FSentiThread.cpp \
     FabricaSentimientos.cpp \
     Fabricante.cpp \
     Horno.cpp \
+    fabrica.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    Bebes.h \
     FSentiThread.h \
+    Fabrica.h \
     FabricaSentimientos.h \
     Fabricante.h \
     Horno.h \
     almacen.h \
     almacenMalos.h \
-    bebesFabricados.h \
     mainwindow.h
 
 FORMS += \

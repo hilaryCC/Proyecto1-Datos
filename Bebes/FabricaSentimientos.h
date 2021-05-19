@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <QMutex>
+#include <stdlib.h>
 
 using namespace std;
 struct Sentimiento;
@@ -14,7 +15,7 @@ struct ColaS;
 
 struct Sentimiento{
     char tipo; //L = amor, A = arte, E = maldad
-    int valor; //Relleno = 3, vacío = 2, roto = -2
+    int valor; //Relleno = 3, vacío = 2, roto = 1
 
     Sentimiento(char _tipo, int _valor){
         tipo = _tipo;
@@ -55,15 +56,14 @@ struct ColaS{
 
 struct FactoryS{
     ColaS * cola;
-    int segundos;
     char tipo; //L = amor, A = arte, E = maldad
     QMutex * mutexCola;
 
-    FactoryS(int _segundos, QMutex * _mutexCola){
-        segundos = _segundos;
+    FactoryS(QMutex * _mutexCola, char _tipo){
         cola = new ColaS();
         mutexCola = _mutexCola;
+        tipo = _tipo;
     }
 
-    Sentimiento * createNew();
+    void createNew();
 };
