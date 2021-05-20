@@ -27,6 +27,7 @@ HEADERS += \
     FabricaSentimientos.h \
     Fabricante.h \
     Horno.h \
+    HornoThread.h \
     almacen.h \
     almacenMalos.h \
     mainwindow.h

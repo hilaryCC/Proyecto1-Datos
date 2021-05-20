@@ -3,22 +3,22 @@
 //HORNO
 void colaHorno::encolar (int dato){
     if (vacia())
-        frente = new Nodo (dato);
+        frente = new NodoHorno (dato);
     else {
-            Nodo* actual = frente;
+            NodoHorno* actual = frente;
             while (actual->siguiente != 0)
                           actual = actual->siguiente;
-            Nodo* nuevo = new Nodo (dato);
+            NodoHorno* nuevo = new NodoHorno (dato);
             actual->siguiente = nuevo;
         }
 }
 
-Nodo* colaHorno::desencolar(void){
+NodoHorno* colaHorno::desencolar(void){
       if (vacia()){
          return 0;
       }
       else{
-          Nodo* borrado = frente;
+          NodoHorno* borrado = frente;
           frente = frente->siguiente;
           borrado->siguiente = 0;
           return borrado;
@@ -32,7 +32,7 @@ bool colaHorno::vacia (void){
          return false;
 }
 
-Nodo* colaHorno::verFrente(){
+NodoHorno* colaHorno::verFrente(){
       return frente;
 }
 
@@ -41,37 +41,37 @@ int colaHorno::setCapacidad(int dato){
 }
 
 //HORNEADOS
-void colaHorneados::encolar (int dato){
+void colaSupervisores::encolar (int dato){
     if (vacia())
-        frente = new Nodo (dato);
+        frente = new NodoHorno (dato);
     else {
-            Nodo* actual = frente;
+            NodoHorno* actual = frente;
             while (actual->siguiente != 0)
                           actual = actual->siguiente;
-            Nodo* nuevo = new Nodo (dato);
+            NodoHorno* nuevo = new NodoHorno (dato);
             actual->siguiente = nuevo;
         }
 }
 
-Nodo* colaHorneados::desencolar(void){
+NodoHorno* colaSupervisores::desencolar(void){
       if (vacia()){
          return 0;
       }
       else{
-          Nodo* borrado = frente;
+          NodoHorno* borrado = frente;
           frente = frente->siguiente;
           borrado->siguiente = 0;
           return borrado;
       }
 }
 
-bool colaHorneados::vacia (void){
+bool colaSupervisores::vacia (void){
      if (frente == 0)
         return true;
      else
          return false;
 }
 
-Nodo* colaHorneados::verFrente(){
+NodoHorno* colaSupervisores::verFrente(){
       return frente;
 }

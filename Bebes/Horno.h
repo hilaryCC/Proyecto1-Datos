@@ -1,38 +1,52 @@
 #ifndef HORNO_H
 #define HORNO_H
+#include "Fabricante.h"
 
 #endif // HORNO_H
-#include "FabricaSentimientos.cpp"
+struct NodoHorno {
+       colaBebe* bebe;
+       NodoHorno* siguiente;
+
+       NodoHorno(colaBebe* b)
+       {
+                bebe = b;
+                siguiente = NULL;
+       }
+
+};
 
 struct colaHorno{
-    colaSentimientos * frenteCola;
-    Nodo * frente;
+    colaBebe * bebesAHornear;
+    NodoHorno * frente;
     int capacidad;
 
     colaHorno(){
         frente = 0;
     }
-    void encolar (int dato);
-    Nodo* desencolar (void);
-    Nodo* verFrente(void);
+    void encolar (colaBebe* bebe);
+    NodoHorno* desencolar (void);
+    NodoHorno* verFrente(void);
     bool vacia(void);
     int setCapacidad(int dato);
 
 };
 
-struct colaHorneados{
+struct colaSupervisores{
     colaHorno * horneados;
-    Nodo * frente;
+    NodoHorno * frente;
     int capacidad;
 
-    colaHorneados(){
+    colaSupervisores(){
         frente = 0;
     }
     bool approve1();
     bool approve2();
-    void encolar (int dato);
-    Nodo* desencolar (void);
-    Nodo* verFrente(void);
+    void encolar (colaBebe * horneado);
+    NodoHorno* desencolar (void);
+    NodoHorno* verFrente(void);
     bool vacia(void);
     int setCapacidad(int dato);
 };
+
+
+
