@@ -11,9 +11,9 @@
 struct Fabricante{
     FactorySThread * corazones;
     QMutex * mCor;
-    FactorySThread * arte;
+    FactorySThread * artes;
     QMutex * mArt;
-    FactorySThread * maldad;
+    FactorySThread * maldades;
     QMutex * mMal;
 
     colaBebe * colaBebes;
@@ -27,13 +27,13 @@ struct Fabricante{
         mCor = new QMutex();
         corazones->_init_('L', mCor);
 
-        arte = new FactorySThread();
+        artes = new FactorySThread();
         mArt = new QMutex();
-        arte->_init_('A', mArt);
+        artes->_init_('A', mArt);
 
-        maldad = new FactorySThread();
+        maldades = new FactorySThread();
         mMal = new QMutex();
-        maldad->_init_('E', mMal);
+        maldades->_init_('E', mMal);
     }
 
     void createNew();
