@@ -13,6 +13,7 @@ using namespace std;
 struct Bebes;
 struct nodoBebe;
 struct colaBebe;
+struct colaMalos;
 
 struct Bebe{
     string tipo;
@@ -34,7 +35,15 @@ struct nodoBebe{
 struct colaBebe{
     nodoBebe * frente;
     int capacidad;
-    QMutex * mutex;
+    int moreno;
+    int afro;
+    int rubio;
+    int casta;
+    int peli;
+    int pink;
+    int badB;
+    int pitufo;
+    int total;
 
     colaBebe(int _capacidad){
         frente = 0;
@@ -47,7 +56,27 @@ struct colaBebe{
     bool vacia(void);
     int largo();
     bool llena();
-    int setCapacidad(int dato);
+    void setCapacidad(int dato);
+    void addCont(string tipo);
+};
+
+struct colaMalos{
+    nodoBebe * frente;
+    int contFab;
+    int contSup;
+
+    colaMalos(){
+        frente = 0;
+        contFab = 0;
+        contSup = 0;
+    }
+
+    void encolar (nodoBebe * nuevo);
+    nodoBebe * desencolar (void);
+    nodoBebe * verFrente(void);
+    bool vacia(void);
+    int largo();
+    bool llena();
 };
 
 #endif // BEBESFABRICADOS_H

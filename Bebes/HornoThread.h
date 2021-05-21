@@ -27,8 +27,8 @@ public:
         while(capacidad != 0){
             this->mutex->lock();
             horneados->encolar(bebeAHornear);
-            sleep(this->tiempo);
             this->mutex->unlock();
+            sleep(this->tiempo);
         }
     }
     void pausar(){

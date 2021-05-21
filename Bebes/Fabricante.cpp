@@ -6,54 +6,61 @@ void Fabricante::createNew(){
     int a = 0;
     int b = 0;
     int c = 0;
+    NodoS * corazon = 0;
+    NodoS * arte = 0;
+    NodoS * maldad = 0;
 
-    mCor->lock();
-    Sentimiento * corazon = corazones->fabrica->cola->desencolar()->sentimiento;
-    mCor->unlock();
+    mTodo->lock();
+    if(!corazones->cola->vacia())
+        corazon = corazones->cola->desencolar();
+    mTodo->unlock();
+    mTodo->lock();
+    if(!artes->cola->vacia())
+        arte = artes->cola->desencolar();
+    mTodo->unlock();
+    mTodo->lock();
+    if(!maldades->cola->vacia())
+        maldad = maldades->cola->desencolar();
+    mTodo->unlock();
 
-    mArt->lock();
-    Sentimiento * arte = artes->fabrica->cola->desencolar()->sentimiento;
-    mArt->unlock();
+    if(corazon != 0 && arte != 0 && maldad != 0){
+        a = corazon->sentimiento->valor;
+        b = arte->sentimiento->valor;
+        c = maldad->sentimiento->valor;
 
-    mMal->lock();
-    Sentimiento * maldad = maldades->fabrica->cola->desencolar()->sentimiento;
-    mMal->unlock();
+        if(cantidadr < 2)
+            cantidad = 4;
+        else if(cantidadr >= 2 && cantidadr < 5)
+            cantidad = 3;
+        else if(cantidadr >= 5 && cantidadr < 10)
+            cantidad = 2;
+        else cantidad = 1;
 
-    if(corazon == 0 || arte == 0 || maldad == 0){
-        a = b = c = 1;
-    }
-    else {
-        a = corazon->valor;
-        b = arte->valor;
-        c = maldad->valor;
-    }
+        Bebe * nuevo = NULL;
 
-    if(cantidadr < 2)
-        cantidad = 4;
-    else if(cantidadr >= 2 && cantidadr < 5)
-        cantidad = 3;
-    else if(cantidadr >= 5 && cantidadr < 10)
-        cantidad = 2;
-    else cantidad = 1;
-
-    Bebe * nuevo = NULL;
-
-    for(int i = 0; i < cantidad; i++){
-        nuevo = RandBaby(a,b,c);
-        if(nuevo->tipo == "Malo")
-            malos->encolar(new nodoBebe(nuevo));
-        else{
-            mBebes->lock();
-            if(!colaBebes->llena()){
-                colaBebes->encolar(new nodoBebe(nuevo));
+        for(int i = 0; i < cantidad; i++){
+            nuevo = RandBaby(a,b,c);
+            if(nuevo->tipo == "Malo"){
+                mMalos->lock();
+                malos->encolar(new nodoBebe(nuevo));
+                mMalos->unlock();
+                cout << "malo" << endl;
             }
             else{
-                malos->encolar(new nodoBebe(nuevo));
+                cout << "otro" << endl;
+                if(!colaBebes->llena()){
+                    cout << "bueno" << endl;
+                    colaBebes->encolar(new nodoBebe(nuevo));
+                }
+                else{
+                    cout << "malo" << endl;
+                    mMalos->lock();
+                    malos->encolar(new nodoBebe(nuevo));
+                    mMalos->unlock();
+                }
             }
-            mBebes->unlock();
         }
     }
-
 }
 
 Bebe * Fabricante::RandBaby(int a, int b, int c){

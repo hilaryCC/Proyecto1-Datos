@@ -2,9 +2,26 @@
 #define FABRICA_H
 
 
-#include "Fabrica.h"
+#include "fabricantethread.h"
+#include "Bebes.h"
 
-struct nodoBebe{
+struct Fabrica{
+    FabricanteThread * fabricante;
+    FactorySThread * corazones;
+    FactorySThread * arte;
+    FactorySThread * maldad;
+    QMutex * mSentis;
+
+    colaBebe * colaBebes;
+    colaMalos * colaMalos;
+    QMutex * mutexCB;
+    QMutex * mutexCM;
+
+    Fabrica(){
+    }
+    void startAll();
+    void pauseAll();
+    void stopAll();
 
 };
 

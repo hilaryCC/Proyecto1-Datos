@@ -20,6 +20,7 @@ public:
         fabrica = new FactoryS(_mutexCola, _tipo);
         running = true;
         pause = false;
+        tiempo = 2;
     }
 
     void run();

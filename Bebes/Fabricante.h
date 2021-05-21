@@ -9,33 +9,28 @@
 #include <stdlib.h>
 
 struct Fabricante{
-    FactorySThread * corazones;
-    QMutex * mCor;
-    FactorySThread * artes;
-    QMutex * mArt;
-    FactorySThread * maldades;
-    QMutex * mMal;
+    FactoryS * corazones;
+    FactoryS * artes;
+    FactoryS * maldades;
+    QMutex * mTodo;
 
     colaBebe * colaBebes;
     QMutex * mBebes;
-    colaBebe * malos;
+    colaMalos * malos;
+    QMutex * mMalos;
 
-    Fabricante(colaBebe * buenos, colaBebe * _malos){
+    Fabricante(colaBebe * buenos, colaMalos * _malos, QMutex * _mb, QMutex * _mm){
         colaBebes = buenos;
         malos = _malos;
-        corazones = new FactorySThread();
-        mCor = new QMutex();
-        corazones->_init_('L', mCor);
-
-        artes = new FactorySThread();
-        mArt = new QMutex();
-        artes->_init_('A', mArt);
-
-        maldades = new FactorySThread();
-        mMal = new QMutex();
-        maldades->_init_('E', mMal);
+        mBebes = _mb;
+        mMalos = _mm;
     }
-
+    void _init_(FactoryS * _corazones, FactoryS * _artes, FactoryS * _maldades, QMutex * todo){
+        corazones = _corazones;
+        artes = _artes;
+        maldades = _maldades;
+        mTodo = todo;
+    }
     void createNew();
     Bebe * RandBaby(int a, int b, int c);
 };

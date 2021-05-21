@@ -9,14 +9,13 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Almacen.cpp \
-    AlmacenMalos.cpp \
     Bebes.cpp \
     FSentiThread.cpp \
     FabricaSentimientos.cpp \
     Fabricante.cpp \
     Horno.cpp \
     fabrica.cpp \
+    fabricantethread.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -28,8 +27,7 @@ HEADERS += \
     Fabricante.h \
     Horno.h \
     HornoThread.h \
-    almacen.h \
-    almacenMalos.h \
+    fabricantethread.h \
     mainwindow.h
 
 FORMS += \
@@ -39,3 +37,5 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=

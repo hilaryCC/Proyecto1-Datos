@@ -1,4 +1,4 @@
-#include "Horno.h"
+/*#include "Horno.h"
 
 //HORNO
 void colaHorno::encolar (int dato){
@@ -74,4 +74,4 @@ bool colaSupervisores::vacia (void){
 
 NodoHorno* colaSupervisores::verFrente(){
       return frente;
-}
+}*/

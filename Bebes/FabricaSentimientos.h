@@ -58,11 +58,17 @@ struct FactoryS{
     ColaS * cola;
     char tipo; //L = amor, A = arte, E = maldad
     QMutex * mutexCola;
+    int total;
+    int llenos;
+    int vacios;
+    int rotos;
 
     FactoryS(QMutex * _mutexCola, char _tipo){
         cola = new ColaS();
+        cola->setCapacidad(10);
         mutexCola = _mutexCola;
         tipo = _tipo;
+        total = llenos = vacios = rotos = 0;
     }
 
     void createNew();

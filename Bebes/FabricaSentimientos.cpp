@@ -55,56 +55,64 @@ bool ColaS::llena(){
 
 
 void FactoryS::createNew(){
-    int random = rand()%101;
-    char _tipo;
-    int modo;
-    switch(tipo){
-        case 'L':
-            if(random < 33){
-                _tipo = 'L';
-                modo = 3;
-            }
-            else if(random > 33 && random < 66){
-                _tipo = 'L';
-                modo = 2;
-            }
-            else {
-                _tipo = 'L';
-                modo = 3;
-            }
-            break;
+    if(!cola->llena()){
+        int random = rand()%101;
+        char _tipo;
+        int modo;
+        switch(tipo){
+            case 'L':
+                if(random < 33){
+                    _tipo = 'L';
+                    modo = 3;
+                    llenos++;
+                }
+                else if(random > 33 && random < 66){
+                    _tipo = 'L';
+                    modo = 2;
+                    vacios++;
+                }
+                else {
+                    _tipo = 'L';
+                    modo = 1;
+                    rotos++;
+                }
+                break;
 
-        case 'A':
-            if(random < 33){
-                _tipo = 'A';
-                modo = 2;
-            }
-            else {
-                _tipo = 'A';
-                modo = 3;
-            }
-            break;
+            case 'A':
+                if(random < 33){
+                    _tipo = 'A';
+                    modo = 2;
+                    vacios++;
+                }
+                else {
+                    _tipo = 'A';
+                    modo = 3;
+                    llenos++;
+                }
+                break;
 
-        case 'E':
-            if(random < 33){
-                _tipo = 'E';
-                modo = 3;
-            }
-            else {
-                _tipo = 'E';
-                modo = 2;
-            }
-            break;
+            case 'E':
+                if(random < 33){
+                    _tipo = 'E';
+                    modo = 3;
+                    llenos++;
+                }
+                else {
+                    _tipo = 'E';
+                    modo = 2;
+                    vacios++;
+                }
+                break;
 
-        default:
-            _tipo = tipo;
-            modo = 3;
-            break;
-    }
-    mutexCola->lock();
-    if(!cola->llena())
+            default:
+                _tipo = tipo;
+                modo = 3;
+                llenos++;
+                break;
+        }
+        total++;
         cola->encolar(new NodoS(new Sentimiento(_tipo, modo)));
-    mutexCola->unlock();
+    }
 }
 
 
