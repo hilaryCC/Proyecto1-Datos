@@ -5,7 +5,7 @@ void FabricanteThread::run(){
         while(pause){
             msleep(500);
             fabricante->mBebes->lock();
-            if(!fabricante->colaBebes->llena())
+            if(!fabricante->colaBebes->llena() && !fabricante->btn)
                 pausar();
             fabricante->mBebes->unlock();
         }

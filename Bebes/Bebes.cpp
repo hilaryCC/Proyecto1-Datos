@@ -46,7 +46,7 @@ int colaBebe::largo(){
     int cont = 0;
 
     nodoBebe * actual = frente;
-    while (actual != 0){
+    while (actual != NULL){
         cont++;
         actual = actual->siguiente;
     }

@@ -63,9 +63,11 @@ struct FactoryS{
     int vacios;
     int rotos;
 
+    bool btn = false;
+
     FactoryS(QMutex * _mutexCola, char _tipo){
         cola = new ColaS();
-        cola->setCapacidad(10);
+        cola->setCapacidad(20);
         mutexCola = _mutexCola;
         tipo = _tipo;
         total = llenos = vacios = rotos = 0;

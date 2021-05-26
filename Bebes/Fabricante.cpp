@@ -43,17 +43,15 @@ void Fabricante::createNew(){
             if(nuevo->tipo == "Malo"){
                 mMalos->lock();
                 malos->encolar(new nodoBebe(nuevo));
+                malos->contFab++;
+                malos->total++;
                 mMalos->unlock();
-                cout << "malo" << endl;
             }
             else{
-                cout << "otro" << endl;
                 if(!colaBebes->llena()){
-                    cout << "bueno" << endl;
                     colaBebes->encolar(new nodoBebe(nuevo));
                 }
                 else{
-                    cout << "malo" << endl;
                     mMalos->lock();
                     malos->encolar(new nodoBebe(nuevo));
                     mMalos->unlock();

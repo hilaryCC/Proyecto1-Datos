@@ -3,6 +3,8 @@
 
 
 void Fabrica::startAll(){
+    iniciado = true;
+
     colaBebes = new colaBebe(25);
     mutexCB = new QMutex();
     colaMalos = new struct colaMalos();

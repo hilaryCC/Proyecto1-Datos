@@ -79,7 +79,7 @@ void FactoryS::createNew(){
                 break;
 
             case 'A':
-                if(random < 33){
+                if(random < 50){
                     _tipo = 'A';
                     modo = 2;
                     vacios++;
@@ -92,7 +92,7 @@ void FactoryS::createNew(){
                 break;
 
             case 'E':
-                if(random < 33){
+                if(random < 50){
                     _tipo = 'E';
                     modo = 3;
                     llenos++;

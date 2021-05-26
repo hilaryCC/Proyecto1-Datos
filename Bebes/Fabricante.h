@@ -19,6 +19,8 @@ struct Fabricante{
     colaMalos * malos;
     QMutex * mMalos;
 
+    bool btn = false;
+
     Fabricante(colaBebe * buenos, colaMalos * _malos, QMutex * _mb, QMutex * _mm){
         colaBebes = buenos;
         malos = _malos;

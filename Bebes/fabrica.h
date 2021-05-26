@@ -6,6 +6,8 @@
 #include "Bebes.h"
 
 struct Fabrica{
+    bool iniciado = false;
+
     FabricanteThread * fabricante;
     FactorySThread * corazones;
     FactorySThread * arte;
