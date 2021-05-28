@@ -3,12 +3,15 @@
 #include <QApplication>
 #include <QMessageBox>
 #include <QDebug>
+#include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QPixmap pix("C:/Users/oscar/Desktop/andres tec/Semestre lll 2021/ED/Proyecto1/Proyecto1-Datos/fondo.png");
+    ui->Fondo->setPixmap(pix);
     fabrica = new Fabrica();
 }
 
@@ -196,4 +199,37 @@ void MainWindow::on_bebesHistBtn_clicked()
 void MainWindow::on_tamBb_valueChanged(int arg1)
 {
     fabrica->colaBebes->capacidad = arg1;
+}
+
+//--------------------------Horno--------------------------------------------
+//---------------------------------------------------------------------------
+
+void MainWindow::on_HornHisBtn_clicked()
+{
+    if(fabrica->iniciado){
+        string info = "";
+        fabrica->mutexCB->lock();
+        info = info + "Horneando: ";
+        info = info + "\nAfros: " + to_string(fabrica->colaHorno->verFrente()->bebe->afro);
+        info = info + "\nRubios: " + to_string(fabrica->colaHorno->verFrente()->bebe->rubio);
+        info = info + "\nCastaño: " + to_string(fabrica->colaHorno->verFrente()->bebe->casta);
+        info = info + "\nPelirrojo: " + to_string(fabrica->colaHorno->verFrente()->bebe->peli);
+        info = info + "\nPink: " + to_string(fabrica->colaHorno->verFrente()->bebe->pink);
+        info = info + "\nBad Bunny: " + to_string(fabrica->colaHorno->verFrente()->bebe->badB);
+        info = info + "\nPitufo: " + to_string(fabrica->colaHorno->verFrente()->bebe->pitufo);
+        info = info + "\nHorneados: ";
+        info = info + "\nAfros: " + to_string(fabrica->colaHorneados->verFrente()->bebe->afro);
+        info = info + "\nRubios: " + to_string(fabrica->colaHorneados->verFrente()->bebe->rubio);
+        info = info + "\nCastaño: " + to_string(fabrica->colaHorneados->verFrente()->bebe->casta);
+        info = info + "\nPelirrojo: " + to_string(fabrica->colaHorneados->verFrente()->bebe->peli);
+        info = info + "\nPink: " + to_string(fabrica->colaHorneados->verFrente()->bebe->pink);
+        info = info + "\nBad Bunny: " + to_string(fabrica->colaHorneados->verFrente()->bebe->badB);
+        info = info + "\nPitufo: " + to_string(fabrica->colaHorneados->verFrente()->bebe->pitufo);
+        fabrica->mutexCB->unlock();
+
+        QMessageBox::information(this, "Horno", info.c_str());
+    }
+    else{
+        QMessageBox::information(this, "Horno", "Informacion no disponible");
+    }
 }

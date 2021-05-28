@@ -21,28 +21,24 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>C:/Users/Administrador/Downloads/factory.png</normaloff>C:/Users/Administrador/Downloads/factory.png</iconset>
+    <normaloff>../../../../../../../../Administrador/Downloads/factory.png</normaloff>../../../../../../../../Administrador/Downloads/factory.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="Fondo">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1301</width>
-      <height>631</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../../fondo.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="Fondo">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../fondo.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
    <widget class="QSpinBox" name="segsCor">
     <property name="geometry">
      <rect>
@@ -788,6 +784,67 @@
      <number>10</number>
     </property>
    </widget>
+   <widget class="QPushButton" name="HornHisBtn">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>160</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>Fondo</zorder>
+   <zorder>HornHisBtn</zorder>
+   <zorder>segsCor</zorder>
+   <zorder>segsArt</zorder>
+   <zorder>segsMal</zorder>
+   <zorder>tamMal</zorder>
+   <zorder>tamArt</zorder>
+   <zorder>tamCor</zorder>
+   <zorder>segsFabricante</zorder>
+   <zorder>segsHorno</zorder>
+   <zorder>tamHorno</zorder>
+   <zorder>segsIns2</zorder>
+   <zorder>segsIns1</zorder>
+   <zorder>segsArch</zorder>
+   <zorder>cantBbCig1</zorder>
+   <zorder>cantBbCig2</zorder>
+   <zorder>cantBbCig3</zorder>
+   <zorder>cantBbCig4</zorder>
+   <zorder>cantBbCig5</zorder>
+   <zorder>segsCigue</zorder>
+   <zorder>perIns1</zorder>
+   <zorder>perIns2</zorder>
+   <zorder>gStopBtn</zorder>
+   <zorder>gStartBtn</zorder>
+   <zorder>gPauseBtn</zorder>
+   <zorder>corTBtn</zorder>
+   <zorder>artTBtn</zorder>
+   <zorder>malTBtn</zorder>
+   <zorder>fabriTBtn</zorder>
+   <zorder>hornoTBtn</zorder>
+   <zorder>archTBtn</zorder>
+   <zorder>gru1Btn</zorder>
+   <zorder>gru2Btn</zorder>
+   <zorder>gru3Btn</zorder>
+   <zorder>gru4Btn</zorder>
+   <zorder>gru5Btn</zorder>
+   <zorder>corHistBtn</zorder>
+   <zorder>artHisBtn</zorder>
+   <zorder>malHistBtn</zorder>
+   <zorder>malosHistBtn</zorder>
+   <zorder>infoFinalBtn</zorder>
+   <zorder>cigHistBtn</zorder>
+   <zorder>almacenHistBtn</zorder>
+   <zorder>cInsHistBtn</zorder>
+   <zorder>archHistBtn</zorder>
+   <zorder>bebesHistBtn</zorder>
+   <zorder>almacenTam</zorder>
+   <zorder>tamBb</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

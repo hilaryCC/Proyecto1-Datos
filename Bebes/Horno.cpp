@@ -1,14 +1,14 @@
-/*#include "Horno.h"
+/* #include "Horno.h"
 
 //HORNO
-void colaHorno::encolar (int dato){
+void colaHorno::encolar(colaBebe *bebe){
     if (vacia())
-        frente = new NodoHorno (dato);
+        frente = new NodoHorno (bebe);
     else {
             NodoHorno* actual = frente;
             while (actual->siguiente != 0)
                           actual = actual->siguiente;
-            NodoHorno* nuevo = new NodoHorno (dato);
+            NodoHorno* nuevo = new NodoHorno (bebe);
             actual->siguiente = nuevo;
         }
 }
@@ -41,14 +41,14 @@ int colaHorno::setCapacidad(int dato){
 }
 
 //HORNEADOS
-void colaSupervisores::encolar (int dato){
+void colaSupervisores::encolar(colaBebe *horneado){
     if (vacia())
-        frente = new NodoHorno (dato);
+        frente = new NodoHorno (horneado);
     else {
             NodoHorno* actual = frente;
             while (actual->siguiente != 0)
                           actual = actual->siguiente;
-            NodoHorno* nuevo = new NodoHorno (dato);
+            NodoHorno* nuevo = new NodoHorno (horneado);
             actual->siguiente = nuevo;
         }
 }

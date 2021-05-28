@@ -7,6 +7,7 @@ class HornoThread : public QThread
 public:
     colaBebe * bebeAHornear;
     colaSupervisores * horneados;
+
     int tiempo;
     int capacidad;
     QMutex* mutex;
@@ -27,6 +28,7 @@ public:
         while(capacidad != 0){
             this->mutex->lock();
             horneados->encolar(bebeAHornear);
+            bebeAHornear->desencolar();
             this->mutex->unlock();
             sleep(this->tiempo);
         }

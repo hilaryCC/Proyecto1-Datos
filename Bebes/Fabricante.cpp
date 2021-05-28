@@ -62,6 +62,18 @@ void Fabricante::createNew(){
 }
 
 Bebe * Fabricante::RandBaby(int a, int b, int c){
+        srand((unsigned)time(0));
+        int numHijos = (rand()%90)+10;
+        if (numHijos >= 0 and numHijos <= 89){
+            cout << "unico" << endl;
+        } else if (numHijos >= 90 and numHijos <=94){
+            cout << "mellizo" << endl;
+        } else if (numHijos >= 95 and numHijos <=97){
+            cout << "trillizo" << endl;
+        } else {
+            cout << "otro" << endl;
+        }
+
     if(a == 3 && b == 3 && c == 2)
         return new Bebe("Moreno");
     else if(a == 3 && b == 3 && c == 3)

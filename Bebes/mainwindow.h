@@ -54,6 +54,8 @@ private slots:
 
     void on_tamBb_valueChanged(int arg1);
 
+    void on_HornHisBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -4,6 +4,7 @@
 
 #include "fabricantethread.h"
 #include "Bebes.h"
+#include "Horno.h"
 
 struct Fabrica{
     bool iniciado = false;
@@ -16,6 +17,10 @@ struct Fabrica{
 
     colaBebe * colaBebes;
     colaMalos * colaMalos;
+    colaHorno * colaHorno;
+    colaSupervisores * colaHorneados;
+    colaSupervisores * supervisados;
+
     QMutex * mutexCB;
     QMutex * mutexCM;
 
